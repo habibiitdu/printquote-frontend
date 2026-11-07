@@ -1,5 +1,7 @@
+import { Plus, Trash2 } from 'lucide-react'
 import { useState, type ComponentType, type ReactNode } from 'react'
 import { useCrudList, useCrudRemove, useCrudSave, type Crud } from '../api/crud'
+import { Drawer } from './Drawer'
 import { ProblemBanner } from './ProblemBanner'
 import { QueryState } from './QueryState'
 
@@ -34,12 +36,12 @@ interface Props<T extends Row, I> {
   columns: Column<T>[]
   Form: ComponentType<EntityFormProps<T, I>>
   sort?: (a: T, b: T) => number
-  /** Put the form below the table at full width (for big editors). */
+  /** Open the editor in a wider drawer (for big editors). */
   wide?: boolean
   footer?: ReactNode
 }
 
-/** A master-data table with an add button and a side panel to create, edit or delete a row. */
+/** A master-data table with an add button and a slide-over drawer to create, edit or delete a row. */
 export function CrudSection<T extends Row, I>({
   resource,
   title,
@@ -74,14 +76,15 @@ export function CrudSection<T extends Row, I>({
   }
 
   return (
-    <div className="row">
-      <section className="card flush" style={{ flex: '3 1 560px', minWidth: 0 }} aria-label={title}>
+    <>
+      <section className="card flush" aria-label={title}>
         <div className="card-head">
           <div className="stack-sm">
             <h2 className="card-title">{title}</h2>
             {description && <p className="card-sub">{description}</p>}
           </div>
           <button type="button" className="btn btn-s" onClick={() => select('new')}>
+            <Plus size={16} aria-hidden="true" />
             Add {noun}
           </button>
         </div>
@@ -141,33 +144,36 @@ export function CrudSection<T extends Row, I>({
         {!footer && <div style={{ height: 6 }} />}
       </section>
 
-      {open && (
-        <section className={`card panel ${wide ? 'wide' : ''}`} aria-label={current ? `Edit ${current.name}` : `New ${noun}`}>
-          <div className="card-head">
-            <h2 className="card-title">{current ? `Edit: ${current.name}` : `New ${noun}`}</h2>
-            {current && (
-              <button
-                type="button"
-                className="btn btn-danger btn-sm"
-                onClick={() => onDelete(current)}
-                disabled={remove.isPending}
-              >
-                {remove.isPending ? 'Deleting…' : 'Delete'}
-              </button>
-            )}
-          </div>
-          <ProblemBanner error={remove.error} heading="Could not delete" />
-          <Form
-            key={selected ?? 'none'}
-            initial={current}
-            saving={save.isPending}
-            error={save.error}
-            onCancel={() => select(null)}
-            onSubmit={(input) => save.mutate({ id: current?.id, input }, { onSuccess: () => setSelected(null) })}
-          />
-        </section>
-      )}
-    </div>
+      <Drawer
+        open={open}
+        onClose={() => select(null)}
+        wide={wide}
+        title={current ? `Edit: ${current.name}` : `New ${noun}`}
+        actions={
+          current && (
+            <button
+              type="button"
+              className="btn btn-danger btn-sm"
+              onClick={() => onDelete(current)}
+              disabled={remove.isPending}
+            >
+              <Trash2 size={15} aria-hidden="true" />
+              {remove.isPending ? 'Deleting…' : 'Delete'}
+            </button>
+          )
+        }
+      >
+        <ProblemBanner error={remove.error} heading="Could not delete" />
+        <Form
+          key={selected ?? 'none'}
+          initial={current}
+          saving={save.isPending}
+          error={save.error}
+          onCancel={() => select(null)}
+          onSubmit={(input) => save.mutate({ id: current?.id, input }, { onSuccess: () => setSelected(null) })}
+        />
+      </Drawer>
+    </>
   )
 }
 

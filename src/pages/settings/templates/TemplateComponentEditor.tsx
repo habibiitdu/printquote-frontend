@@ -1,3 +1,4 @@
+import { Trash2 } from 'lucide-react'
 import type { ComponentMeasure, FieldBehaviour, FinishingOperation, Paper, Press, TemplateFieldKey } from '../../../api/types'
 import { CheckboxField, NumberField, SelectField, TextField } from '../../../components/form/Fields'
 import { basisLabel, behaviourLabel, fieldLabel, fieldsForMeasure, measureLabel } from '../../../lib/labels'
@@ -241,8 +242,8 @@ function FieldRow({
         <NumberField label={cell('step')} hideLabel value={f.step} onChange={(step) => onChange({ step })} />
       </td>
       <td>
-        <button type="button" className="btn btn-g" onClick={onRemove} aria-label={`Remove ${rowLabel}`}>
-          Remove
+        <button type="button" className="btn-icon" onClick={onRemove} aria-label={`Remove ${rowLabel}`}>
+          <Trash2 size={16} aria-hidden="true" />
         </button>
       </td>
     </tr>

@@ -1,3 +1,4 @@
+import { Trash2 } from 'lucide-react'
 import { Printer } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { fieldErrors } from '../../api/client'
@@ -162,8 +163,8 @@ function PressSlabEditor({
                   <input id={`slab-rate-${i}`} className="in" type="number" min={0} step="any" required value={s.rate} onChange={(e) => set(i, { rate: e.target.value })} />
                 </td>
                 <td>
-                  <button type="button" className="btn btn-g" onClick={() => onChange(slabs.filter((_, j) => j !== i))} aria-label={`Remove slab ${i + 1}`}>
-                    Remove
+                  <button type="button" className="btn-icon" onClick={() => onChange(slabs.filter((_, j) => j !== i))} aria-label={`Remove slab ${i + 1}`}>
+                    <Trash2 size={16} aria-hidden="true" />
                   </button>
                 </td>
               </tr>

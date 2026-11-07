@@ -1,3 +1,4 @@
+import { Trash2 } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { fieldErrors } from '../../../api/client'
 import type { BindingType, BindingTypeInput } from '../../../api/types'
@@ -64,8 +65,8 @@ export function BindingTypeForm({ initial, saving, error, onSubmit, onCancel }: 
                     <input id={`bslab-rate-${i}`} className="in" type="number" min={0} step="any" required value={s.rate} onChange={(e) => set(i, { rate: e.target.value })} />
                   </td>
                   <td>
-                    <button type="button" className="btn btn-g" onClick={() => setSlabs((xs) => xs.filter((_, j) => j !== i))} aria-label={`Remove slab ${i + 1}`}>
-                      Remove
+                    <button type="button" className="btn-icon" onClick={() => setSlabs((xs) => xs.filter((_, j) => j !== i))} aria-label={`Remove slab ${i + 1}`}>
+                      <Trash2 size={16} aria-hidden="true" />
                     </button>
                   </td>
                 </tr>
