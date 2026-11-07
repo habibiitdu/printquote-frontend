@@ -1,0 +1,78 @@
+/* Design tokens taken from the approved mockup. */
+:root {
+  /* Type */
+  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --fs-xs: 11px;
+  --fs-sm: 12px;
+  --fs-body-sm: 13px;
+  --fs-body: 14px;
+  --fs-h2: 16px;
+  --fs-h1: 28px;
+  --fs-kpi: 30px;
+
+  /* Ink */
+  --c-ink: #16202c;
+  --c-ink-2: #2b3542;
+  --c-muted: #4a5563;
+  --c-muted-2: #5a6472;
+
+  /* Surfaces */
+  --c-bg: #f4f5f7;
+  --c-surface: #ffffff;
+  --c-surface-2: #f4f6f8;
+  --c-head: #f0f2f5;
+  --c-subtotal: #f7f8fa;
+  --c-border: #dce0e5;
+  --c-border-soft: #e8ebef;
+  --c-input-border: #bcc3cc;
+
+  /* Brand */
+  --c-primary: #1b5fa8;
+  --c-primary-dark: #134577;
+  --c-primary-soft: #e7f0fa;
+  --c-focus: #1b5fa8;
+
+  /* Sidebar */
+  --c-side: #16202c;
+  --c-side-hover: #22303f;
+  --c-side-on: #2a3d55;
+  --c-side-text: #c9d1dc;
+  --c-side-sub: #a9b4c2;
+  --c-side-label: #8c99aa;
+  --c-side-focus: #8fbcef;
+
+  /* Excel-style sheet */
+  --c-sheet-border: #9aa4b1;
+  --c-sheet-head: #eef1f4;
+  --c-sheet-total: #f4f6f8;
+  --c-sheet-bill: #dde6f0;
+
+  /* Status and behaviour chips */
+  --c-draft-bg: #eef1f4;
+  --c-draft-fg: #3b4654;
+  --c-sent-bg: #e7f0fa;
+  --c-sent-fg: #134577;
+  --c-approved-bg: #e3f3ea;
+  --c-approved-fg: #17603c;
+  --c-lost-bg: #fbe9e7;
+  --c-lost-fg: #9a2a1a;
+  --c-ask-bg: #fdf0e1;
+  --c-ask-fg: #8a4204;
+  --c-ask-border: #d98a3d;
+
+  /* Feedback */
+  --c-danger: #b42318;
+  --c-danger-bg: #fdecea;
+  --c-warn-bg: #fff6e5;
+  --c-warn-fg: #7a4a00;
+
+  /* Shape and space */
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-pill: 999px;
+  --gap: 20px;
+  --input-h: 42px;
+  --touch: 44px;
+}

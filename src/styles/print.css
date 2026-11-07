@@ -1,0 +1,33 @@
+/* Browser print: show only the document. */
+@media print {
+  body {
+    background: #ffffff;
+  }
+  .side,
+  .no-print,
+  .skip-link {
+    display: none !important;
+  }
+  .main {
+    padding: 0;
+  }
+  .card {
+    border: none;
+    padding: 0;
+  }
+  .row,
+  .col-main {
+    display: block;
+  }
+  .sheet {
+    font-size: 11px;
+  }
+  .sheet td,
+  .sheet th {
+    border-color: #000000;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
