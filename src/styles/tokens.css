@@ -1,78 +1,102 @@
-/* Design tokens taken from the approved mockup. */
+/* Design tokens. Every colour, size and shadow in the app comes from here. */
 :root {
   /* Type */
-  --font-sans: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, 'Cascadia Mono', monospace;
   --fs-xs: 11px;
   --fs-sm: 12px;
   --fs-body-sm: 13px;
   --fs-body: 14px;
+  --fs-h3: 15px;
   --fs-h2: 16px;
-  --fs-h1: 28px;
-  --fs-kpi: 30px;
+  --fs-h1: 26px;
+  --fs-kpi: 28px;
 
   /* Ink */
-  --c-ink: #16202c;
-  --c-ink-2: #2b3542;
-  --c-muted: #4a5563;
-  --c-muted-2: #5a6472;
+  --c-ink: #0f172a;
+  --c-ink-2: #334155;
+  --c-muted: #5b6b82;
+  --c-muted-2: #64748b;
+  --c-faint: #94a3b8;
 
   /* Surfaces */
-  --c-bg: #f4f5f7;
+  --c-bg: #f4f6fb;
   --c-surface: #ffffff;
-  --c-surface-2: #f4f6f8;
-  --c-head: #f0f2f5;
-  --c-subtotal: #f7f8fa;
-  --c-border: #dce0e5;
-  --c-border-soft: #e8ebef;
-  --c-input-border: #bcc3cc;
+  --c-surface-2: #f8fafc;
+  --c-head: #f6f8fb;
+  --c-subtotal: #f4f7fc;
+  --c-border: #e3e8f0;
+  --c-border-soft: #eef1f6;
+  --c-input-border: #cdd5e1;
+  --c-input-hover: #a9b5c7;
 
   /* Brand */
-  --c-primary: #1b5fa8;
-  --c-primary-dark: #134577;
-  --c-primary-soft: #e7f0fa;
-  --c-focus: #1b5fa8;
+  --c-primary: #2a57d6;
+  --c-primary-dark: #1d42ae;
+  --c-primary-soft: #edf2fe;
+  --c-primary-ring: rgba(42, 87, 214, 0.18);
+  --c-focus: #2a57d6;
+  --grad-primary: linear-gradient(135deg, #2a57d6 0%, #4f46e5 100%);
+
+  /* Print-process accents (CMYK), used for the brand mark and icon badges */
+  --c-cyan: #0ea5e9;
+  --c-magenta: #db2777;
+  --c-yellow: #eab308;
 
   /* Sidebar */
-  --c-side: #16202c;
-  --c-side-hover: #22303f;
-  --c-side-on: #2a3d55;
-  --c-side-text: #c9d1dc;
-  --c-side-sub: #a9b4c2;
-  --c-side-label: #8c99aa;
-  --c-side-focus: #8fbcef;
+  --c-side: #0b1324;
+  --c-side-2: #111c33;
+  --c-side-hover: rgba(255, 255, 255, 0.06);
+  --c-side-on: rgba(255, 255, 255, 0.1);
+  --c-side-text: #b4c0d3;
+  --c-side-sub: #8391a8;
+  --c-side-label: #7d8ba3;
+  --c-side-focus: #9db8ff;
+  --c-side-accent: #7ea2ff;
+  --side-w: 252px;
 
   /* Excel-style sheet */
-  --c-sheet-border: #9aa4b1;
-  --c-sheet-head: #eef1f4;
-  --c-sheet-total: #f4f6f8;
-  --c-sheet-bill: #dde6f0;
+  --c-sheet-border: #cbd3df;
+  --c-sheet-head: #f1f4f9;
+  --c-sheet-total: #f6f8fc;
+  --c-sheet-bill: #e6edfc;
 
   /* Status and behaviour chips */
-  --c-draft-bg: #eef1f4;
-  --c-draft-fg: #3b4654;
-  --c-sent-bg: #e7f0fa;
-  --c-sent-fg: #134577;
-  --c-approved-bg: #e3f3ea;
-  --c-approved-fg: #17603c;
-  --c-lost-bg: #fbe9e7;
-  --c-lost-fg: #9a2a1a;
-  --c-ask-bg: #fdf0e1;
-  --c-ask-fg: #8a4204;
-  --c-ask-border: #d98a3d;
+  --c-draft-bg: #f1f4f8;
+  --c-draft-fg: #475569;
+  --c-draft-dot: #94a3b8;
+  --c-sent-bg: #eaf1fe;
+  --c-sent-fg: #1d4ed8;
+  --c-sent-dot: #3b82f6;
+  --c-approved-bg: #e8f7ef;
+  --c-approved-fg: #15803d;
+  --c-approved-dot: #22c55e;
+  --c-lost-bg: #fdeeee;
+  --c-lost-fg: #b91c1c;
+  --c-lost-dot: #ef4444;
+  --c-ask-bg: #fff4e6;
+  --c-ask-fg: #9a4a06;
+  --c-ask-border: #f0a65a;
 
   /* Feedback */
-  --c-danger: #b42318;
-  --c-danger-bg: #fdecea;
-  --c-warn-bg: #fff6e5;
+  --c-danger: #c0262d;
+  --c-danger-bg: #fdeeee;
+  --c-warn-bg: #fff8e8;
   --c-warn-fg: #7a4a00;
 
-  /* Shape and space */
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 10px;
+  /* Shape, depth and space */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
   --radius-pill: 999px;
+  --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 4px 12px rgba(15, 23, 42, 0.07), 0 2px 4px rgba(15, 23, 42, 0.04);
+  --shadow-lg: 0 12px 32px rgba(15, 23, 42, 0.1);
+  --shadow-primary: 0 6px 16px rgba(42, 87, 214, 0.28);
   --gap: 20px;
-  --input-h: 42px;
+  --input-h: 40px;
   --touch: 44px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
 }

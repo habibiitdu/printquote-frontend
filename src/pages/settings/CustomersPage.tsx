@@ -1,3 +1,4 @@
+import { Users } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { fieldErrors } from '../../api/client'
 import { customersApi } from '../../api/masterData'
@@ -13,6 +14,7 @@ export function CustomersPage() {
   return (
     <>
       <PageHeader
+        icon={Users}
         eyebrow="Configuration"
         title="Customers"
         description="A customer with a profit % set here gets that margin ahead of the template and quantity rules."

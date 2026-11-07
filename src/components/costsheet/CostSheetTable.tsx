@@ -20,7 +20,7 @@ export function CostSheetTable({ sheet, variant, caption }: Props) {
 
   return (
     <div className="scroll-x">
-      <table className={excel ? 'sheet' : 'tbl'}>
+      <table className={excel ? 'sheet' : 'tbl tbl-compact'}>
         {caption && <caption className="sr-only">{caption}</caption>}
         <thead>
           <tr>

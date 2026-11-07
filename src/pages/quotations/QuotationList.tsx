@@ -1,3 +1,4 @@
+import { FileSearch } from 'lucide-react'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuotationList } from '../../api/quotations'
@@ -59,7 +60,25 @@ export function QuotationList({ title = 'Recent quotations' }: { title?: string 
 
       <QueryState isLoading={query.isLoading} error={query.error}>
         {data && data.items.length === 0 ? (
-          <p className="empty">No quotations match.</p>
+          <div className="empty-state">
+            <span className="empty-state-icon" aria-hidden="true">
+              <FileSearch size={26} strokeWidth={1.8} />
+            </span>
+            {status || debouncedSearch ? (
+              <>
+                <p className="empty-state-title">No quotations match</p>
+                <p>Try another status or search term.</p>
+              </>
+            ) : (
+              <>
+                <p className="empty-state-title">No quotations yet</p>
+                <p>Start one from a product template and it will appear here.</p>
+                <Link className="btn btn-p" to="/quotations/new">
+                  New quotation
+                </Link>
+              </>
+            )}
+          </div>
         ) : (
           <div className="scroll-x">
             <table className="tbl">

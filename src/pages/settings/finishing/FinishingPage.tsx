@@ -1,3 +1,4 @@
+import { Scissors } from 'lucide-react'
 import { bindingTypesApi, finishingOperationsApi, profitRulesApi } from '../../../api/masterData'
 import { CrudSection } from '../../../components/CrudSection'
 import { PageHeader } from '../../../components/PageHeader'
@@ -12,6 +13,7 @@ export function FinishingPage() {
   return (
     <>
       <PageHeader
+        icon={Scissors}
         eyebrow="Configuration"
         title="Finishing, binding & pricing"
         description="Each operation has a cost basis: per piece, per 1,000, per square inch, or a fixed amount. Binding rates step by book thickness in forma."

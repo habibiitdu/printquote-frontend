@@ -1,3 +1,4 @@
+import { Printer } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { fieldErrors } from '../../api/client'
 import { pressesApi } from '../../api/masterData'
@@ -15,6 +16,7 @@ export function PressesPage() {
   return (
     <>
       <PageHeader
+        icon={Printer}
         eyebrow="Configuration"
         title="Presses & print rates"
         description="Each press has a sheet size, a plate price, make-ready waste and a print rate table. Short runs pay a flat charge per plate; longer runs pay per 1,000 impressions."

@@ -1,3 +1,4 @@
+import { Building2 } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { fieldErrors } from '../../api/client'
 import { companiesApi } from '../../api/masterData'
@@ -11,6 +12,7 @@ export function CompaniesPage() {
   return (
     <>
       <PageHeader
+        icon={Building2}
         eyebrow="Configuration"
         title="Companies"
         description="Letterheads the press quotes under. The company name is printed at the top of every cost sheet."

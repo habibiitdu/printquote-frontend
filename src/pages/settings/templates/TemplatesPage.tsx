@@ -1,3 +1,4 @@
+import { LayoutTemplate } from 'lucide-react'
 import { templatesApi } from '../../../api/masterData'
 import { CrudSection } from '../../../components/CrudSection'
 import { PageHeader } from '../../../components/PageHeader'
@@ -8,6 +9,7 @@ export function TemplatesPage() {
   return (
     <>
       <PageHeader
+        icon={LayoutTemplate}
         eyebrow="Configuration"
         title="Product templates"
         description="A template says which components a product has and, for each field, whether the quote form asks for it, fills a default, or locks it. New product types are added here, not in code."

@@ -8,14 +8,16 @@ interface Props {
   label?: string
 }
 
-/** Shows a loading line or an error banner until the data is ready. */
+/** Shows a loading placeholder or an error banner until the data is ready. */
 export function QueryState({ isLoading, error, children, label = 'Loading…' }: Props) {
   if (error) return <ProblemBanner error={error} />
   if (isLoading)
     return (
-      <p className="muted" role="status">
-        {label}
-      </p>
+      <div className="skeleton" role="status" aria-label={label}>
+        <span />
+        <span />
+        <span />
+      </div>
     )
   return <>{children}</>
 }

@@ -1,3 +1,4 @@
+import { FileText } from 'lucide-react'
 import { useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 import { useCustomers } from '../../api/masterData'
@@ -43,6 +44,7 @@ function QuotationView({ quotation }: { quotation: QuotationDetail }) {
   return (
     <>
       <PageHeader
+        icon={FileText}
         eyebrow={<Link to="/quotations">Quotations</Link>}
         title={
           <span className="inline-pair" style={{ flexWrap: 'wrap', gap: 12 }}>

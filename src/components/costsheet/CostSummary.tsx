@@ -27,7 +27,10 @@ export function CostSummary({ sheet }: { sheet: CostSheet }) {
         <span className="num">{formatMoney(sheet.totalBill)}</span>
       </div>
       <div className="rate-box">
-        <span>Rate per piece</span>
+        <span>
+          Rate per piece
+          <span>{formatMoney(sheet.totalBill)} ÷ {sheet.quantity.toLocaleString('en-IN')} pcs</span>
+        </span>
         <span className="num">{formatMoney(sheet.ratePerPiece)}</span>
       </div>
     </div>

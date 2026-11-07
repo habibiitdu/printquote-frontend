@@ -1,3 +1,4 @@
+import { Layers } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
 import { fieldErrors } from '../../api/client'
 import { papersApi } from '../../api/masterData'
@@ -15,6 +16,7 @@ export function PapersPage() {
   return (
     <>
       <PageHeader
+        icon={Layers}
         eyebrow="Configuration"
         title="Paper & stock"
         description="Every paper the press buys, priced per rim (500 full sheets) or per sheet. Enter the market price per kg and the helper works out the rim price from gsm and sheet size."

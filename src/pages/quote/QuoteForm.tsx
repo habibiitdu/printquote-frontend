@@ -1,3 +1,4 @@
+import { FilePen, FilePlus2 } from 'lucide-react'
 import { useMemo, useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useAddVersion, useCreateQuotation } from '../../api/quotations'
@@ -79,6 +80,7 @@ export function QuoteForm({ masters, init, quotation }: Props) {
   return (
     <>
       <PageHeader
+        icon={quotation ? FilePen : FilePlus2}
         eyebrow={
           quotation ? <Link to={`/quotations/${quotation.id}`}>{quotation.number}</Link> : <Link to="/">Quotations</Link>
         }
