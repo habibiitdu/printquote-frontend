@@ -390,7 +390,8 @@ a:hover {
 .card.flush > .card-head {
   padding: 20px 22px 0;
 }
-.card.flush > .card-foot {
+/* Footers may sit inside a wrapper (e.g. the live panel's refresh fade), so not only direct children. */
+.card.flush .card-foot {
   padding: 0 22px 20px;
 }
 .card.flush > .muted,
@@ -1279,11 +1280,11 @@ th.num {
 }
 .tbl-compact th:first-child,
 .tbl-compact td:first-child {
-  padding-left: 18px;
+  padding-left: 22px;
 }
 .tbl-compact th:last-child,
 .tbl-compact td:last-child {
-  padding-right: 18px;
+  padding-right: 22px;
 }
 .locked-value {
   justify-content: space-between;
