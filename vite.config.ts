@@ -6,6 +6,8 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 5173,
+    // Lets the dev server be shared through an ngrok tunnel for reviews.
+    allowedHosts: ['.ngrok-free.app', '.ngrok-free.dev', '.ngrok.app', '.ngrok.dev'],
     proxy: {
       '/api': {
         target: 'http://localhost:5080',
