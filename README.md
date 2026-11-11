@@ -65,3 +65,11 @@ Conventions (from the technical design): API types live only in `src/api/types.t
 ## Printing
 
 The quotation detail page has a Print button. The print stylesheet hides the navigation and side panels, so only the selected document (internal cost sheet or customer quotation) is printed.
+
+## Docker image
+
+```bash
+docker build -t printquote-web .
+```
+
+The image builds the app with Node 22 and serves `dist/` from nginx (unprivileged, port 8080). nginx also proxies `/api/*` to `API_UPSTREAM` (default `http://api:8080`) and falls back to `index.html` for client-side routes. The config is in `nginx/default.conf.template`. The full stack and the deployment steps are in the backend repo: `printquote-backend/deploy/README.md`.
